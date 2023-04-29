@@ -9,3 +9,8 @@ Temp/UnityLockfile
 Temp/FSTimeGet-ca7b482260064484d8d48d43d262d20a
 Temp/UnityLockfile
 Temp/UnityLockfile
+*.lock
+.vs/LudumDare53/v15/Server/sqlite3/storage.ide
+.vs/LudumDare53/v15/Server/sqlite3/storage.ide-shm
+.vs/LudumDare53/v15/Server/sqlite3/storage.ide-wal
+Temp/UnityLockfile
