@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator Anim;
 
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -47,13 +48,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if (onGround)
         {
-            v = -0;
+            v = 0f;
         }
         else
         {
             v += grav * Time.deltaTime ;
         }
-        if (Jump && onGround)
+        if (Jump && Physics.CheckSphere(GroundPos.position, 1.3f, mask))
         {
             v = jumpForce;
         }

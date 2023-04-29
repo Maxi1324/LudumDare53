@@ -129,4 +129,4 @@ MonoBehaviour:
     m_Value: -180
   saturation:
     m_OverrideState: 1
-    m_Value: 100
+    m_Value: 30
