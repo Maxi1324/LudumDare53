@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController character;
 
+    public Animator Anim;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -30,17 +32,14 @@ public class PlayerMovement : MonoBehaviour
     {
         var onGround = Physics.CheckSphere(GroundPos.position, 0.5f, mask);
 
-       
-
         var speedMod = speed;
         var hori = Input.GetAxis("Horizontal");
         var verti = Input.GetAxis("Vertical");
 
-        var mousex = Input.GetAxis("Mouse X");
-
         var Jump = Input.GetButtonDown("Jump");
         var Sprint = Input.GetButton("LeftShift");
 
+        var Fire1 = Input.GetButton("Fire1");
 
         if (Sprint)
         {
@@ -54,11 +53,19 @@ public class PlayerMovement : MonoBehaviour
         {
             v += grav * Time.deltaTime ;
         }
-        if (Jump)
+        if (Jump && onGround)
         {
             v = jumpForce;
         }
 
+        if (Fire1)
+        {
+            Anim.SetBool("Attack", true);
+        }
+        else
+        {
+            Anim.SetBool("Attack", false);
+        }
         
         character.Move(Vector3.down * v *Time.deltaTime);
 
@@ -73,10 +80,16 @@ public class PlayerMovement : MonoBehaviour
             character.Move(transform.forward * verti * lSpeed * Time.deltaTime);
         }
 
-        if(Mathf.Abs(mousex) > DeadZoneMouse)
-        {
-            transform.Rotate(0, MouseSpeedX * mousex*Time.deltaTime,0);
-        }
+       
 
+    }
+
+    private void LateUpdate()
+    {
+        var mousex = Input.GetAxis("Mouse X");
+        if (Mathf.Abs(mousex) > DeadZoneMouse)
+        {
+            transform.Rotate(0, MouseSpeedX * mousex * Time.deltaTime, 0);
+        }
     }
 }
