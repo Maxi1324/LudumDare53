@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: a18c72f092aae864693c5211ebaed49c, type: 2}
 --- !u!1 &36502717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7640558969779515294, guid: 582961efe54f4494381b3eec88240848,
@@ -4504,6 +4504,51 @@ Transform:
   m_Father: {fileID: 1927575773}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &453955090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a7c7b10d26ce5f4ba27421571d18696,
+    type: 3}
+  m_PrefabInstance: {fileID: 825342661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &453955091
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453955090}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.17
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.25
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &453955092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453955090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12824f8e37afe545838651722e13174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 453955091}
+  anim: {fileID: 825342691}
+  dis: 50
+  drawSphere: 1
+  playerNear: 50
 --- !u!1001 &468963674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9098,6 +9143,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 0a7c7b10d26ce5f4ba27421571d18696,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 0a7c7b10d26ce5f4ba27421571d18696,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.029
       objectReference: {fileID: 0}
     - target: {fileID: 8981078763558077094, guid: 0a7c7b10d26ce5f4ba27421571d18696,
         type: 3}

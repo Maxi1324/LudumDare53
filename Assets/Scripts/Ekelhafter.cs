@@ -62,7 +62,7 @@ public class Ekelhafter : MonoBehaviour
         else
         {
             anim.SetBool("walking", false);
-        }
+        }   
 
         if (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(player.transform.position)) < 5)
         {
