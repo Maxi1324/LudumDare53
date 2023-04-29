@@ -97,6 +97,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\NergyThingy.cs" />
     <Compile Include="Assets\Scripts\PlayerAnimationEvent.cs" />
+    <Compile Include="Assets\Scripts\DamageHandler.cs" />
+    <Compile Include="Assets\Scripts\DoorOpen1.cs" />
+    <Compile Include="Assets\Scripts\OpenDoor2.cs" />
+    <Compile Include="Assets\Scripts\ControllDingsMitNehmen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

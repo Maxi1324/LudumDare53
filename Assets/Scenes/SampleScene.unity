@@ -1761,6 +1761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 170643205}
   - component: {fileID: 170643206}
+  - component: {fileID: 170643207}
   m_Layer: 7
   m_Name: Anim
   m_TagString: Untagged
@@ -1805,6 +1806,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &170643207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170643204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e745876a956adb4297e334d69d715b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pl: {fileID: 550094484}
 --- !u!1001 &178344583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4214,7 +4228,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 375
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6930,6 +6944,11 @@ MonoBehaviour:
     m_Bits: 55
   character: {fileID: 550094485}
   Anim: {fileID: 170643206}
+  dis: 5
+  DamageMask:
+    serializedVersion: 2
+    m_Bits: 256
+  DamageStart: {fileID: 330585546}
 --- !u!143 &550094485
 CharacterController:
   m_ObjectHideFlags: 0
@@ -11530,7 +11549,9 @@ GameObject:
   - component: {fileID: 853766914}
   - component: {fileID: 853766913}
   - component: {fileID: 853766912}
-  m_Layer: 0
+  - component: {fileID: 853766915}
+  - component: {fileID: 853766916}
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11615,6 +11636,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853766910}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &853766915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853766910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ff1fbfa47cd2c4b8b028a6526c1cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  e:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 853766916}
+        m_TargetAssemblyTypeName: DoorOpen1, Assembly-CSharp
+        m_MethodName: obi
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &853766916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853766910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea24d70b5bcc60748884e06ffc78581d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ob: {fileID: 837414677}
 --- !u!1001 &880690282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15459,7 +15520,7 @@ GameObject:
   - component: {fileID: 1326635936}
   - component: {fileID: 1326635935}
   - component: {fileID: 1326635934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17991,6 +18052,8 @@ GameObject:
   - component: {fileID: 1537658089}
   - component: {fileID: 1537658088}
   - component: {fileID: 1537658087}
+  - component: {fileID: 1537658091}
+  - component: {fileID: 1537658090}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -18076,6 +18139,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537658085}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1537658090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537658085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ff1fbfa47cd2c4b8b028a6526c1cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  e:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1537658091}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1537658091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537658085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5620c3d12e7626b408abc9d209cb1f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Door: {fileID: 0}
 --- !u!1001 &1539611814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19309,6 +19412,7 @@ MonoBehaviour:
   Schalter1: {fileID: 1809976973}
   Roboter: {fileID: 714511507}
   Wand1Eingang: {fileID: 837414677}
+  Door2Weg: 0
 --- !u!195 &1705403176
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19757,6 +19861,7 @@ GameObject:
   - component: {fileID: 1770323551}
   - component: {fileID: 1770323550}
   - component: {fileID: 1770323549}
+  - component: {fileID: 1770323553}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -19772,7 +19877,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770323548}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -19842,6 +19947,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: -18.805, z: 0}
+--- !u!114 &1770323553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770323548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770f1aad1dd73fb489651efe105c408b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1773930219
 GameObject:
   m_ObjectHideFlags: 0

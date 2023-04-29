@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class PlayerAnimationEvent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerMovement pl;
 
-    // Update is called once per frame
-    void Update()
+    public void DoDamage()
     {
-        
+        pl.DoDamage();
     }
 }

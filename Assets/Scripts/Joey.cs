@@ -50,11 +50,18 @@ public class Joey : MonoBehaviour
         anim.SetBool("PressSchalter", false);
     }
 
+    public bool Door2Weg;
+
+    public void Door2Destroy()
+    {
+        Door2Weg = true;
+    }
+
     public void AfterSchalterumgelegt()
     {
         if(Schalter == 0)
         {
-            Wand1Eingang.SetActive(false);
+            if(Wand1Eingang != null)Wand1Eingang.SetActive(false);
             Agent.SetDestination(Roboter.position);
             StartCoroutine(WaitTillThere(() =>
             {

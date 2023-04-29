@@ -23,10 +23,24 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator Anim;
 
+    public float dis;
+    public LayerMask DamageMask;
+    public Transform DamageStart;
+
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void DoDamage()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, DamageStart.forward, out hit,dis, DamageMask))
+        {
+            hit.collider.gameObject.GetComponent<DamageHandler>().handle();
+        }
+        Debug.DrawLine(transform.position, DamageStart.forward * dis);
     }
 
     void Update()
