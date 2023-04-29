@@ -22,20 +22,25 @@ public class Joey : MonoBehaviour
         anim.SetBool("talk", true);
         TextManager.instance.ShowText("Dude, you finally arrived", 1);
         TextManager.instance.ShowText("You know we have some work to do?", 1);
-        TextManager.instance.ShowText("Take that energy thingy and follow me", 1,()=>
-        {
-            anim.SetBool("talk", false);
-            Agent.SetDestination(Schalter1.position);
-            StartCoroutine(WaitTillThere(() =>
-           {
-               StartCoroutine(PressSchalter());
-
-           }, Schalter1.position));
-        });
+        TextManager.instance.ShowText("Take that energy thingy",1);
     }
 
     private void LateUpdate()
     {
+    }
+
+    public void EnergyThingyAufgehoben()
+    {
+        TextManager.instance.ShowText("Well done, now follow me", 1,() =>
+        {
+            anim.SetBool("talk", false);
+            Agent.SetDestination(Schalter1.position);
+            StartCoroutine(WaitTillThere(() =>
+            {
+                StartCoroutine(PressSchalter());
+
+            }, Schalter1.position));
+        });
     }
 
     IEnumerator PressSchalter()
@@ -60,7 +65,9 @@ public class Joey : MonoBehaviour
 
                 TextManager.instance.ShowText("Pleace remember, that you can defende your self", 1);
                 TextManager.instance.ShowText("You have a Sword", 1);
-                TextManager.instance.ShowText("Press the Left Mouse Button, or hold it.", 1, () =>
+                TextManager.instance.ShowText("Press the Left Mouse Button, or hold it.", 1);
+                TextManager.instance.ShowText("By the way you need to destroy the Button next to the Controller module", 1);
+                TextManager.instance.ShowText("Just Hit it with you Sword", 1, () =>
                 {
                     anim.SetBool("talk", false);
                 });

@@ -80,9 +80,6 @@ public class PlayerMovement : MonoBehaviour
             float lSpeed = speedMod*((verti > 0) ? 1 : 0.5f);
             character.Move(transform.forward * verti * lSpeed * Time.deltaTime);
         }
-
-       
-
     }
 
     private void LateUpdate()
