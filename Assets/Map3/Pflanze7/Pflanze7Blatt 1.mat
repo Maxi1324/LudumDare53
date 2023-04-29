@@ -25,7 +25,6 @@ Material:
   m_ValidKeywords:
   - _ALPHATEST_ON
   - _METALLICSPECGLOSSMAP
-  - _OCCLUSIONMAP
   - _PARALLAXMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
