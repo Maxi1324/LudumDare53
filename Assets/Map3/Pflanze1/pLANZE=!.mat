@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-662921389988635188
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pLANZE=!
+  m_Shader: {fileID: 4800000, guid: 589ea0397284e0e42b1985a0455d66b2, type: 3}
+  m_ValidKeywords:
+  - _FUR_SPECULAR
+  - _NO_FUR_SHADOW
+  - _SPECULARHIGHLIGHTS_OFF
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
+  - _MATERIAL_TYPE_LIT
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AOMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurDirMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurLengthMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurMap:
+        m_Texture: {fileID: 2800000, guid: e1ac6060e3765e745bfc69b2a8ec2db4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 5b8e7334f28b60344a5ccc547f2e7366, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PreIntegratedAverageHairFiberScattering:
+        m_Texture: {fileID: 11700000, guid: 90d7a19df72dfc64fa7d6b18b90cf3c9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutout: 0.2
+    - _AlphaToCoverageOn: 1
+    - _Area: 0.1
+    - _Backlit: 0.25
+    - _BentType: 1
+    - _ConsiderShadow: 0
+    - _CuticleAngle: 3
+    - _FurLengthIntensity: 1
+    - _FurRimLighting: 0
+    - _FurRimLightingDeferred: 0
+    - _FurScale: 1
+    - _FurSmoothness: 0.45
+    - _FurSpecular: 1
+    - _FurSpecularDeferred: 0
+    - _GeomInstancing: 0
+    - _GroomingIntensity: 1
+    - _Kappa: 1
+    - _Material_Type: 0
+    - _MedulaAbsorb: 0.9
+    - _MedulaScatter: 0.75
+    - _Metallic: 0
+    - _NoFurShadow: 1
+    - _NormalScale: 1
+    - _Occlusion: 0.25
+    - _RadialSmoothness: 0.7
+    - _RimLightIntensity: 0
+    - _RimLightPower: 10
+    - _RootSmoothness: 0.6
+    - _ShadowExtraBias: 0
+    - _ShellAmount: 13
+    - _Smoothness: 0
+    - _SpecularHighlights: 0
+    - _TipSmoothness: 0.8
+    - _TotalShellStep: 0.026
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseMove: {r: 0, g: 0, b: 0, a: 3}
+    - _RootColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TipColor: {r: 1, g: 1, b: 1, a: 1}
+    - _WindFreq: {r: 0.5, g: 0.7, b: 0.9, a: 1}
+    - _WindMove: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
