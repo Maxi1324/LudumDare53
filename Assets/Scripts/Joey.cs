@@ -28,17 +28,28 @@ public class Joey : MonoBehaviour
             Agent.SetDestination(Schalter1.position);
             StartCoroutine(WaitTillThere(() =>
            {
-               anim.SetBool("Schalter", true);
-               anim.SetBool("Schalter", false);
-               Wand1Eingang.SetActive(false);
+               StartCoroutine(PressSchalter());
+
            }, Schalter1.position));
         });
+    }
+
+    private void LateUpdate()
+    {
+    }
+
+    IEnumerator PressSchalter()
+    {
+        anim.SetBool("PressSchalter", true);
+        yield return null;
+        anim.SetBool("PressSchalter", false);
     }
 
     public void AfterSchalterumgelegt()
     {
         if(Schalter == 0)
         {
+            Wand1Eingang.SetActive(false);
             Agent.SetDestination(Roboter.position);
             StartCoroutine(WaitTillThere(() =>
             {
@@ -74,7 +85,7 @@ public class Joey : MonoBehaviour
 
     IEnumerator WaitTillThere(Action action, Vector3 position)
     {
-        while (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(position)) > 5)
+        while (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(position)) > 2)
         {
             yield return null;
         }
