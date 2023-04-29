@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\Map3\NewAnimals\Orgis\Obs\Nest\OrgiNest.cs" />
     <Compile Include="Assets\Map3\NewAnimals\Orgis\OrgiePorgyController.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
