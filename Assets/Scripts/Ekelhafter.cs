@@ -94,7 +94,7 @@ public class Ekelhafter : MonoBehaviour
         while (true)
         {
             agent.SetDestination(player.position);
-         
+            yield return null;
         }
     }
 
