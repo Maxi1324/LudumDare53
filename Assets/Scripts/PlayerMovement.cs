@@ -68,8 +68,9 @@ public class PlayerMovement : MonoBehaviour
         {
             v += grav * Time.deltaTime ;
         }
-        if (Jump && Physics.CheckSphere(GroundPos.position, 1.3f, mask))
+        if (Jump && Physics.CheckSphere(GroundPos.position, 2.3f, mask))
         {
+            character.Move(new Vector3(0, 1, 0));
             v = jumpForce;
         }
 

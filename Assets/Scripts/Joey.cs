@@ -43,6 +43,13 @@ public class Joey : MonoBehaviour
         });
     }
 
+    public void ScrewsCollected()
+    {
+        TextManager.instance.ShowText("Well done", 1);
+        TextManager.instance.ShowText("Come back", 1);
+        StartCoroutine(LastTimeWaitiForPlayer());
+    }
+
     IEnumerator PressSchalter()
     {
         anim.SetBool("PressSchalter", true);
@@ -91,12 +98,24 @@ public class Joey : MonoBehaviour
             yield return null;
         }
         TextManager.instance.ShowText("We need more parts", 1);
-        TextManager.instance.ShowText("We need 7 screws and a enery core for the robot", 1);
+        TextManager.instance.ShowText("We need 8 screws", 1);
+        TextManager.instance.ShowText("They are all over the place", 1);
 
-        TextManager.instance.ShowText("The Screws are all arround the map", 1);
-        TextManager.instance.ShowText("the energy core is in the middle of the lake", 1);
 
     }
+
+
+    public IEnumerator LastTimeWaitiForPlayer()
+    {
+        Transform trans = FindObjectOfType<PlayerMovement>().transform;
+        while (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(trans.position)) > 25)
+        {
+            yield return null;
+        }
+        TextManager.instance.ShowText("We have repaired the Robot", 1);
+        TextManager.instance.ShowText("Go into it", 1);
+    }
+
 
     public void AfterSchalterumgelegt()
     {
