@@ -61,6 +61,7 @@ public class Joey : MonoBehaviour
         if (Door2Weg)
         {
             TextManager.instance.ShowText("You've done it, come back", 1);
+            StartCoroutine(WaitiForPlayer());
         }
     }
 
@@ -78,7 +79,23 @@ public class Joey : MonoBehaviour
         if (ControllCollect)
         {
             TextManager.instance.ShowText("You've done it, come back", 1);
+            StartCoroutine(WaitiForPlayer());
         }
+    }
+
+    public IEnumerator WaitiForPlayer()
+    {
+        Transform trans = FindObjectOfType<PlayerMovement>().transform;
+        while (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(trans.position)) > 25)
+        {
+            yield return null;
+        }
+        TextManager.instance.ShowText("We need more parts", 1);
+        TextManager.instance.ShowText("We need 7 screws and a enery core for the robot", 1);
+
+        TextManager.instance.ShowText("The Screws are all arround the map", 1);
+        TextManager.instance.ShowText("the energy core is in the middle of the lake", 1);
+
     }
 
     public void AfterSchalterumgelegt()
