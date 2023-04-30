@@ -103,6 +103,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\ScrewManager.cs" />
     <Compile Include="Assets\Scripts\CollectScrews.cs" />
+    <Compile Include="Assets\Scripts\ElekhafterAnimationEvent.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

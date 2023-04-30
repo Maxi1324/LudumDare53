@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        pos = transform.position;
+        rot = transform.rotation;
     }
 
     public void DoDamage()
@@ -104,5 +106,18 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Rotate(0, MouseSpeedX * mousex * Time.deltaTime, 0);
         }
+    }
+
+    public Vector3 pos;
+    public Quaternion rot;
+
+
+    public void HandleDamage()
+    {
+        transform.position = pos;
+        transform.rotation = rot;
+        TextManager.instance.ShowText("Ýou've got hit", 1);
+        TextManager.instance.ShowText("Are you okay?", 1);
+        Debug.Log("hit");
     }
 }

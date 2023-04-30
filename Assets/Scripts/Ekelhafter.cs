@@ -15,6 +15,11 @@ public class Ekelhafter : MonoBehaviour
     private IEnumerator normaBev;
     private IEnumerator attackBev;
 
+    public GameObject Parikel;
+
+    public float AttackDistanceHit;
+    public LayerMask AttackLayerMask;
+
     private void Start()
     {
         normaBev = Routine();
@@ -64,7 +69,7 @@ public class Ekelhafter : MonoBehaviour
             anim.SetBool("walking", false);
         }   
 
-        if (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(player.transform.position)) < 5)
+        if (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(player.transform.position)) < 7)
         {
             anim.SetBool("Attack", true);
         }
@@ -81,13 +86,10 @@ public class Ekelhafter : MonoBehaviour
             float a = Random.Range(0, 360);
             Vector3 target = transform.position + new Vector3(Mathf.Cos(a), Mathf.Sin(a)) * dis;
             agent.SetDestination(target);
-            while (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(target)) > 5)
-            {
-                yield return null;
-            }
-            yield return null;
+            yield return new WaitForSeconds(2);
         }
     }
+
 
     public IEnumerator Attack(Transform player)
     {
@@ -101,5 +103,25 @@ public class Ekelhafter : MonoBehaviour
     public static Vector3 Vec3dTo2d(Vector3 vec)
     {
         return new Vector3(vec.x, 0, vec.z);
+    }
+
+    public void DamageHandle()
+    {
+        Instantiate(Parikel, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    public void AttackDingsi()
+    {
+        Debug.Log("Ekelhaft Attack");
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position-transform.forward,transform.forward,out hit, AttackDistanceHit, AttackLayerMask))
+        {
+            hit.collider.GetComponent<PlayerMovement>().HandleDamage();
+        }
+
+        if (Physics.CheckSphere(transform.position + transform.forward, 2.2f, AttackLayerMask)){
+            FindObjectOfType<PlayerMovement>().HandleDamage();
+        }
     }
 }
