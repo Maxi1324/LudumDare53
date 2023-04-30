@@ -6,6 +6,7 @@ public class ScrewManager : MonoBehaviour
 {
     public static ScrewManager instance;
     public List<GameObject> Screws;
+    public List<GameObject> Screwiiiii;
 
     private int ScrewState;
 
@@ -22,6 +23,8 @@ public class ScrewManager : MonoBehaviour
     public void inc()
     {
         Screws[ScrewState].SetActive(true);
+        Screwiiiii[ScrewState].SetActive(true);
+
         ScrewState += 1;
         if(ScrewState == Screws.Count)
         {

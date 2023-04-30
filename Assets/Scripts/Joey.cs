@@ -12,6 +12,7 @@ public class Joey : MonoBehaviour
     public Transform Schalter1;
     public Transform Roboter;
 
+    public GameObject giIntoRobot;
 
     public GameObject Wand1Eingang;
 
@@ -107,6 +108,7 @@ public class Joey : MonoBehaviour
 
     public IEnumerator LastTimeWaitiForPlayer()
     {
+        giIntoRobot.SetActive(true);
         Transform trans = FindObjectOfType<PlayerMovement>().transform;
         while (Vector3.Distance(Vec3dTo2d(transform.position), Vec3dTo2d(trans.position)) > 25)
         {

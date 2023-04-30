@@ -315,7 +315,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "_strength",
     "m_StageCapability": 3,
-    "m_Value": 0.05000000074505806,
+    "m_Value": 0.0005000000237487257,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }
@@ -637,7 +637,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "_speed",
     "m_StageCapability": 3,
-    "m_Value": 0.4000000059604645,
+    "m_Value": 0.0010000000474974514,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }
