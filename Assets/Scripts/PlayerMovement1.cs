@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
     public float speed = 100;
     public float SprintMult = 1.3f;
@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform DamageStart;
 
     public LayerMask Watermask;
+
+    float turnSmoothVelocity;
+    public float turnSmoothTime = 0.1f;
 
 
     void Start()
@@ -57,9 +60,29 @@ public class PlayerMovement : MonoBehaviour
         var verti = Input.GetAxis("Vertical");
 
         var Jump = Input.GetButtonDown("Jump");
+        Vector3 dir = new Vector3(hori, 0, verti);
+
         var Sprint = Input.GetButton("LeftShift");
+        if (Sprint)
+        {
+            Anim.SetBool("Run", true);
+        }
+        else
+        {
+            Anim.SetBool("Run", false);
+        }
+
+        if(dir.magnitude > 0.1f)
+        {
+            Anim.SetBool("Walk", true);
+        }
+        else
+        {
+            Anim.SetBool("Walk", false);
+        }
 
         var Fire1 = Input.GetButton("Fire1");
+        Fire1 = false;
 
         if (Sprint)
         {
@@ -75,8 +98,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Jump && Physics.CheckSphere(GroundPos.position, 2.3f, mask))
         {
-            character.Move(new Vector3(0, 1, 0));
+            character.Move(new Vector3(0, 2, 0));
             v = jumpForce;
+            Anim.SetBool("Jump", true);
+        }
+        else
+        {
+            Anim.SetBool("Jump", false);
         }
 
         if (Fire1)
@@ -87,19 +115,23 @@ public class PlayerMovement : MonoBehaviour
         {
             Anim.SetBool("Attack", false);
         }
-        
+
+
+        if(dir.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + DamageStart.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+
+            Vector3 moveDir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+
+            float lSpeed = speedMod;
+
+            character.Move(moveDir.normalized * lSpeed * Time.deltaTime);
+        }
+
         character.Move(Vector3.down * v *Time.deltaTime);
 
-        if (Mathf.Abs(hori) > deadZone)
-        {
-            float lSpeed = speedMod * 0.65f;
-            character.Move(transform.right * hori * lSpeed * Time.deltaTime);
-        }
-        if (Mathf.Abs(verti) > deadZone)
-        {
-            float lSpeed = speedMod*((verti > 0) ? 1 : 0.5f);
-            character.Move(transform.forward * verti * lSpeed * Time.deltaTime);
-        }
 
         var water = Physics.CheckSphere(GroundPos.position, .4f, Watermask);
         if (water)
