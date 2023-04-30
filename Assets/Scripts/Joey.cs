@@ -50,11 +50,35 @@ public class Joey : MonoBehaviour
         anim.SetBool("PressSchalter", false);
     }
 
+    public void CotrollCollect()
+    {
+        if (!Door2Weg)
+        {
+            TextManager.instance.ShowText("Well done don't forget to destroy the Button", 1);
+        }
+        ControllCollect = true;
+
+        if (Door2Weg)
+        {
+            TextManager.instance.ShowText("You've done it, come back", 1);
+        }
+    }
+
     public bool Door2Weg;
+    public bool ControllCollect;
 
     public void Door2Destroy()
     {
         Door2Weg = true;
+        if (!ControllCollect)
+        {
+            TextManager.instance.ShowText("Well done, don't forget to collect the controll Module", 1);
+        }
+
+        if (ControllCollect)
+        {
+            TextManager.instance.ShowText("You've done it, come back", 1);
+        }
     }
 
     public void AfterSchalterumgelegt()

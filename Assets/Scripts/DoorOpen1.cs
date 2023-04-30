@@ -10,5 +10,6 @@ public class DoorOpen1 : MonoBehaviour
     public void obi()
     {
         Destroy(ob);
+        Destroy(gameObject);
     }
 }
