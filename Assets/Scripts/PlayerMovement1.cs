@@ -32,10 +32,18 @@ public class PlayerMovement1 : MonoBehaviour
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
 
+    public FootAttack f1;
+    public FootAttack f2;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        pos = transform.position;
+        rot = transform.rotation;
+    }
+
+    public void Checkpoint()
+    {
         pos = transform.position;
         rot = transform.rotation;
     }
@@ -101,6 +109,9 @@ public class PlayerMovement1 : MonoBehaviour
             character.Move(new Vector3(0, 2, 0));
             v = jumpForce;
             Anim.SetBool("Jump", true);
+
+            f1.gross = true;
+            f2.gross = true;
         }
         else
         {

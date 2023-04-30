@@ -37,7 +37,11 @@ public class Ekelhafter : MonoBehaviour
 
     private void Update()
     {
-        var player = FindObjectOfType<PlayerMovement>().gameObject;
+        var player = FindObjectOfType<PlayerMovement>()?.gameObject;
+        if(player == null)
+        {
+            player = FindObjectOfType<PlayerMovement1>().gameObject;
+        }
         if (Vector3.Distance(player.transform.position, transform.position)< playerNear)
         {
             if (normaBev != null)
@@ -117,11 +121,11 @@ public class Ekelhafter : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position-transform.forward,transform.forward,out hit, AttackDistanceHit, AttackLayerMask))
         {
-            hit.collider.GetComponent<PlayerMovement>().HandleDamage();
+            hit.collider.GetComponent<PlayerMovement>()?.HandleDamage();
         }
 
         if (Physics.CheckSphere(transform.position + transform.forward, 2.2f, AttackLayerMask)){
-            FindObjectOfType<PlayerMovement>().HandleDamage();
+            FindObjectOfType<PlayerMovement>()?.HandleDamage();
         }
     }
 }
