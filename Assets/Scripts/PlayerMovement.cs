@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask DamageMask;
     public Transform DamageStart;
 
+    public LayerMask Water;
+
 
     void Start()
     {
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
         var onGround = Physics.CheckSphere(GroundPos.position, 0.5f, mask);
 
         var speedMod = speed;
@@ -97,6 +100,16 @@ public class PlayerMovement : MonoBehaviour
             float lSpeed = speedMod*((verti > 0) ? 1 : 0.5f);
             character.Move(transform.forward * verti * lSpeed * Time.deltaTime);
         }
+
+        var water = Physics.CheckSphere(GroundPos.position, 1f, Water);
+        if (water)
+        {
+            Debug.Log("jer");
+                transform.position = pos;
+                transform.rotation = rot;
+                TextManager.instance.ShowText("The Water is poisonous", 1);
+                TextManager.instance.ShowText("Are you okay?", 1);
+        }
     }
 
     private void LateUpdate()
@@ -119,5 +132,30 @@ public class PlayerMovement : MonoBehaviour
         TextManager.instance.ShowText("Ýou've got hit", 1);
         TextManager.instance.ShowText("Are you okay?", 1);
         Debug.Log("hit");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            transform.position = pos;
+            transform.rotation = rot;
+            TextManager.instance.ShowText("The Water is poisonous", 1);
+            TextManager.instance.ShowText("Are you okay?", 1);
+        }
+        Debug.Log("jer12");
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("jer");
+        if (other.gameObject.tag == "Water")
+        {
+            transform.position = pos;
+            transform.rotation = rot;
+            TextManager.instance.ShowText("The Water is poisonous", 1);
+            TextManager.instance.ShowText("Are you okay?", 1);
+        }
     }
 }

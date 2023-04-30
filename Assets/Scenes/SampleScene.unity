@@ -7602,6 +7602,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8961359253771211100, guid: 2e8157f901283db438706831cef352f1,
         type: 3}
+      propertyPath: m_TagString
+      value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: -8961359253771211100, guid: 2e8157f901283db438706831cef352f1,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -10674,6 +10679,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &785679529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573208857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.000001, y: 1.5781256, z: 1.1379173e-13}
+  m_Center: {x: 0.0000009551422, y: 0.2109383, z: 1.498801e-14}
 --- !u!1001 &795075560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25969,6 +25987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409934976036646910, guid: ab7f59bbd065ff24994aa3f90485d33c,
+        type: 3}
+      propertyPath: Water.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab7f59bbd065ff24994aa3f90485d33c, type: 3}
