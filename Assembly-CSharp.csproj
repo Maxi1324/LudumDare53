@@ -112,6 +112,8 @@
     <Compile Include="Assets\Scripts\Food.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Talki.cs" />
+    <Compile Include="Assets\Scripts\Ending.cs" />
+    <Compile Include="Assets\startGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

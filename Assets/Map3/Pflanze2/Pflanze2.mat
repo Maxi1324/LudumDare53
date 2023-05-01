@@ -128,7 +128,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _speed: 5.5
+    - _speed: 0.5
     - _wtrength: 0.19
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
